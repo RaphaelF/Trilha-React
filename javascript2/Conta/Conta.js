@@ -1,15 +1,16 @@
+//Clase abstrata
 export class Conta{
     static numeroDeContas = 0;
     
     
     constructor(saldoInicial,agencia, cliente){
+        if(this.constructor == Conta){
+            throw new Error("Você não deve instanciar objetos de uma classe abstrata");
+        }
         this._saldo = saldoInicial;
         this._agencia = agencia;
         this._cliente = cliente;
         Conta.numeroDeContas += 1;
-        if(this.constructor == Conta){
-            console.log("Você não deveria instanciar essa conta");
-        }
     }
 
     get cliente(){
@@ -26,11 +27,9 @@ export class Conta{
         return this._saldo;
     }
 
-
+    //Método abstrato
     sacar(valor){
-        let taxa = 1;
-        return this._sacar(valor, taxa);
-        
+        throw new Error("Você não deve utilizar métodos abstratos");
     }
 
     _sacar(valor, taxa){
