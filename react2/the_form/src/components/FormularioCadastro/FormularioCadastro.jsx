@@ -1,35 +1,55 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { TextField, Switch } from "@material-ui/core";
+import { TextField, Switch, FormControlLabel } from "@material-ui/core";
 
 function FormularioCadastro() {
   return (
     <form>
-      <TextField id="nome" label="Nome" variant="outlined" fullWidth />
+      <TextField
+        id="nome"
+        label="Nome"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+      />
 
       <TextField
         id="sobrenome"
         label="Sobrenome"
         variant="outlined"
+        margin="normal"
         fullWidth
       />
 
-      <TextField id="cpf" label="CPF" variant="outlined" fullWidth />
-
-      <label htmlFor="">Promoções</label>
-      <Switch
-        name="Promocoes"
-        inputProps={{ "aria-label": "secondary checkbox" }}
-        label="Promoções"
-        color="primary"
+      <TextField
+        id="cpf"
+        label="CPF"
+        variant="outlined"
+        margin="normal"
+        fullWidth
       />
 
-      <label htmlFor="">Newsletter</label>
-      <Switch
-        name="Newsletter"
-        inputProps={{ "aria-label": "secondary checkbox" }}
+      <FormControlLabel
+        label="Promoções"
+        control={
+          <Switch
+            name="Promocoes"
+            inputProps={{ "aria-label": "secondary checkbox" }}
+            color="primary"
+            defaultChecked={true}
+          />
+        }
+      />
+      <FormControlLabel
         label="Newsletter"
-        color="primary"
+        control={
+          <Switch
+            name="Newsletter"
+            inputProps={{ "aria-label": "secondary checkbox" }}
+            color="primary"
+            defaultChecked={true}
+          />
+        }
       />
 
       <Button variant="contained" color="primary" type="submit">
